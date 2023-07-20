@@ -6,15 +6,11 @@ import br.com.alura.loja.orcamento.Orcamento;
 
 public class CalculadoraDeImpostos {
 
+    // Retiramos o algotimo dessa classe por que quanto mais impostos aparecer maior
+    // fica esse metodo, oque nao é legal, entao separamos o algoritimo em classes
+    // separadas, diminuindo a complexibilidade de um unico metodo ter muitas
+    // condicoes
     public BigDecimal calcular(Orcamento orcamento, TipoImposto tipoImposto) {
-        switch (tipoImposto) {
-            case ICMS:
-                return orcamento.getValor().multiply(new BigDecimal("0.1"));
-            case ISS:
-                return orcamento.getValor().multiply(new BigDecimal("0.06"));
-            default:
-                return BigDecimal.ZERO;
-        }
-
+        return tipoImposto.calcular(orcamento);
     }
 }
