@@ -12,5 +12,17 @@ public abstract class Desconto {
         this.proximo = proximo;
     }
 
-    public abstract BigDecimal calcular(Orcamento orcamento);
+    // Tiramos o metodo das classes filha que se repetem, adionando nelas metodos
+    // abstract
+    public BigDecimal calcular(Orcamento orcamento) {
+        if (this.verifica(orcamento)) {
+            return this.efetuarCalculo(orcamento);
+        }
+        return proximo.calcular(orcamento);
+    }
+
+    // metos implementados na classe filha
+    public abstract BigDecimal efetuarCalculo(Orcamento orcamento);
+
+    public abstract boolean verifica(Orcamento orcamento);
 }
