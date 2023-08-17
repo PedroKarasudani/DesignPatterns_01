@@ -3,12 +3,15 @@ package br.com.alura;
 import java.math.BigDecimal;
 
 import br.com.alura.loja.http.JavaHttpCliente;
+import br.com.alura.loja.orcamento.ItemOrcamento;
 import br.com.alura.loja.orcamento.Orcamento;
 import br.com.alura.loja.orcamento.RegistroDeOrcamento;
 
 public class TesteAdapter {
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(BigDecimal.TEN, 1);
+        ItemOrcamento banana = new ItemOrcamento(new BigDecimal("100"));
+        Orcamento orcamento = new Orcamento();
+        orcamento.adicionarItem(banana);
         orcamento.aprovar();
         orcamento.finalizar();
 
