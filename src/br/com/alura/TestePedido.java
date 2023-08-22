@@ -25,5 +25,23 @@ public class TestePedido {
                                                                                                             // dependencias
 
         handlers.executa(gerador);
+
+        /**********
+         * PADRAO FACEDE*********
+         * EXEMPLO:
+         * Conta minhaConta = new Conta();
+         * Conta outraConta= new Conta();
+         * 
+         * BigDecimal valorTransferencia = new BigDecimal("100");
+         * Transferencia transferencia = new Transferencia();
+         * transferencia.validarConta(minhaConta);
+         * transferencia.validarConta(outraConta);
+         * transferencia.checarSaldo(minhaConta, valorTransferencia);
+         * transferencia.executar(minhaConta, outraConta, valorTransferencia);
+         * 
+         * 
+         * atuando como fachada, padrao facede, igual o GeraPedidoHandlers
+         * transferencia.executar(minhaConta, outraConta, valorTransferencia);
+         */
     }
 }
