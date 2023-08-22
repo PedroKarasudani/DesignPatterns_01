@@ -7,6 +7,7 @@ import br.com.alura.loja.orcamento.ItemOrcamento;
 import br.com.alura.loja.pedido.GeraPedido;
 import br.com.alura.loja.pedido.GeraPedidoHandlers;
 import br.com.alura.loja.pedido.acao.EnviaEmailPedido;
+import br.com.alura.loja.pedido.acao.LogDePedido;
 import br.com.alura.loja.pedido.acao.SalvaPedidoNoBancoDeDados;
 
 public class TestePedido {
@@ -19,7 +20,9 @@ public class TestePedido {
 
         GeraPedido gerador = new GeraPedido(cliente, banana); // separando os dados
         GeraPedidoHandlers handlers = new GeraPedidoHandlers(
-                Arrays.asList(new SalvaPedidoNoBancoDeDados(), new EnviaEmailPedido())); // separando as dependencias
+                Arrays.asList(new SalvaPedidoNoBancoDeDados(), new EnviaEmailPedido(), new LogDePedido())); // separando
+                                                                                                            // as
+                                                                                                            // dependencias
 
         handlers.executa(gerador);
     }
